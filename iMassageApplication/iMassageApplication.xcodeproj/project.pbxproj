@@ -13,6 +13,11 @@
 		7B354A0D1DEC9B4800F38A4B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B354A0C1DEC9B4800F38A4B /* MessagesViewController.swift */; };
 		7B354A101DEC9B4800F38A4B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B354A0E1DEC9B4800F38A4B /* MainInterface.storyboard */; };
 		7B354A121DEC9B4800F38A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B354A111DEC9B4800F38A4B /* Assets.xcassets */; };
+		7B52E6261DF079D400E69538 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B52E6251DF079D400E69538 /* ExpandedViewController.swift */; };
+		7B52E6281DF079E400E69538 /* CompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B52E6271DF079E400E69538 /* CompactViewController.swift */; };
+		7B52E62A1DF07A0E00E69538 /* MessagesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B52E6291DF07A0E00E69538 /* MessagesClass.swift */; };
+		7B52E62D1DF0951900E69538 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B52E62B1DF0951900E69538 /* MessageTableViewCell.swift */; };
+		7B52E62E1DF0951900E69538 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B52E62C1DF0951900E69538 /* MessageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		7B354A0F1DEC9B4800F38A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7B354A111DEC9B4800F38A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B354A131DEC9B4800F38A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B52E6251DF079D400E69538 /* ExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
+		7B52E6271DF079E400E69538 /* CompactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactViewController.swift; sourceTree = "<group>"; };
+		7B52E6291DF07A0E00E69538 /* MessagesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesClass.swift; sourceTree = "<group>"; };
+		7B52E62B1DF0951900E69538 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		7B52E62C1DF0951900E69538 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				7B354A0C1DEC9B4800F38A4B /* MessagesViewController.swift */,
+				7B52E6291DF07A0E00E69538 /* MessagesClass.swift */,
+				7B52E6271DF079E400E69538 /* CompactViewController.swift */,
+				7B52E6251DF079D400E69538 /* ExpandedViewController.swift */,
+				7B52E62B1DF0951900E69538 /* MessageTableViewCell.swift */,
+				7B52E62C1DF0951900E69538 /* MessageTableViewCell.xib */,
 				7B354A0E1DEC9B4800F38A4B /* MainInterface.storyboard */,
 				7B354A111DEC9B4800F38A4B /* Assets.xcassets */,
 				7B354A131DEC9B4800F38A4B /* Info.plist */,
@@ -202,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B354A121DEC9B4800F38A4B /* Assets.xcassets in Resources */,
+				7B52E62E1DF0951900E69538 /* MessageTableViewCell.xib in Resources */,
 				7B354A101DEC9B4800F38A4B /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B52E62A1DF07A0E00E69538 /* MessagesClass.swift in Sources */,
+				7B52E6281DF079E400E69538 /* CompactViewController.swift in Sources */,
 				7B354A0D1DEC9B4800F38A4B /* MessagesViewController.swift in Sources */,
+				7B52E62D1DF0951900E69538 /* MessageTableViewCell.swift in Sources */,
+				7B52E6261DF079D400E69538 /* ExpandedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +425,7 @@
 				7B354A181DEC9B4800F38A4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B354A1A1DEC9B4800F38A4B /* Build configuration list for PBXNativeTarget "iMassageApplication" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				7B354A1C1DEC9B4800F38A4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

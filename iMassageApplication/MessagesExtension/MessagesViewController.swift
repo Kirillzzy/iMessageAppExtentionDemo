@@ -11,101 +11,6 @@ import Messages
 
 
 
-
-class MathExpression {
-    static private var expression: String = ""
-    static func getExcpression() -> String {
-        return expression
-    }
-    static func setExpression(_ newExpression: String) {
-        expression = newExpression
-    }
-}
-
-
-class CompactViewController: UIViewController {
-    var conversation : MSConversation?;
-    @IBAction func beginningButtonPressed(_ sender: Any) {
-        let controller: UIViewController
-        controller = instantiateExpandedVC()
-        let d = controller as! ExpandedViewController
-        d.conversation = conversation
-        addChildViewController(controller)
-        view.addSubview(controller.view)
-        controller.didMove(toParentViewController: self)
-    }
-
-    private func instantiateExpandedVC() -> UIViewController {
-        guard let expandedVC = storyboard?.instantiateViewController(withIdentifier: "ExpandedVC") as? ExpandedViewController else {
-            print("HERE")
-            fatalError("Can't instantiate ExpandedViewController")
-        }
-    
-        return expandedVC
-    }
-    
-}
-
-class ExpandedViewController: UIViewController {
-    var conversation : MSConversation?;
-    @IBOutlet weak var expressionLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        expressionLabel.text = MathExpression.getExcpression()
-    }
-    
-    @IBAction func anyButtonPressed(_ sender: UIButton) {
-        var value: String = String(sender.currentTitle!)
-        if value == "÷"{
-            value = "/"
-        }
-        if value == "×"{
-            value = "*"
-        }
-        setExpression(getExpression() + value)
-    }
-    
-    @IBAction func equalsButtonPressed(_ sender: Any) {
-        let session = conversation?.selectedMessage?.session ?? MSSession()
-        let message = MSMessage(session: session)
-        let layout = MSMessageTemplateLayout()
-        layout.image = #imageLiteral(resourceName: "calc")
-        layout.imageTitle = "iMessage Extension"
-        layout.caption = "Hello world!"
-        message.layout = layout
-        message.summaryText = "Sent Hello World message"
-        
-        var components = URLComponents()
-        let queryItem = URLQueryItem(name: "expression", value: getExpression())
-        components.queryItems = [queryItem]
-        message.url = components.url
-        conversation?.insert(message)
-    }
-
-    
-    @IBAction func clearButtonPressed(_ sender: Any) {
-        setExpression("")
-    }
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        if getExpression().characters.count > 0{
-            expressionLabel.text?.remove(at: (getExpression().endIndex))
-        }
-    }
-    
-    private func getExpression() -> String{
-        return MathExpression.getExcpression()
-    }
-    
-    private func setExpression(_ newExpression: String){
-        expressionLabel.text = newExpression
-        MathExpression.setExpression(newExpression)
-    }
-    
-}
-
-
 class MessagesViewController: MSMessagesAppViewController {
     
     
@@ -141,14 +46,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func didSelect(_ message: MSMessage, conversation: MSConversation) {
-        //print("HERE IN DIDSELECT")
-        /*guard let components = NSURLComponents(url: message.url!, resolvingAgainstBaseURL: false) else {
-            fatalError("The message contains an invalid URL")
-        }
-        if let queryItems = components.queryItems {
-            print((queryItems.first?.description)!)
-            MathExpression.setExpression((queryItems.first?.value)!)
-        }*/
+    
     }
     
     
@@ -198,25 +96,6 @@ class MessagesViewController: MSMessagesAppViewController {
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
 
     }
-    
-    
-    private func composeMessage() {
-        let conversation = activeConversation
-        let session = conversation?.selectedMessage?.session ?? MSSession()
-        
-        let layout = MSMessageTemplateLayout()
-        layout.image = UIImage(named: "message-background.png")
-        layout.imageTitle = "iMessage Extension"
-        layout.caption = "Hello world!"
-        layout.subcaption = "Sent by /(conversation?.localParticipantIdentifier)"
-        
-        let message = MSMessage(session: session)
-        message.layout = layout
-        message.summaryText = "Sent Hello World message"
-        
-        conversation?.insert(message)
-    }
-    
     
 
 }
