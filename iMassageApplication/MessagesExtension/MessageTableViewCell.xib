@@ -12,41 +12,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MessageTableViewCell" customModule="MessagesExtension" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="KGk-i7-Jjw" customClass="MessageTableViewCell" customModule="MessagesExtension" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="294" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubbleMessage" translatesAutoresizingMaskIntoConstraints="NO" id="2fX-eD-rcw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bubble" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avr-H0-M22">
-                        <rect key="frame" x="8" y="8" width="304" height="27"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="8" y="0.0" width="278" height="81.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="avr-H0-M22" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="4F8-ox-jTC"/>
-                    <constraint firstItem="2fX-eD-rcw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G9o-tx-d42"/>
                     <constraint firstItem="avr-H0-M22" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="GOB-4V-eMp"/>
-                    <constraint firstAttribute="bottom" secondItem="2fX-eD-rcw" secondAttribute="bottom" id="JL6-Oc-U6R"/>
-                    <constraint firstItem="avr-H0-M22" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aXD-Uc-vna"/>
-                    <constraint firstAttribute="trailing" secondItem="2fX-eD-rcw" secondAttribute="trailing" id="fo5-Kh-dx6"/>
-                    <constraint firstItem="2fX-eD-rcw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uEN-3c-ibS"/>
+                    <constraint firstItem="avr-H0-M22" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="aXD-Uc-vna"/>
                     <constraint firstItem="avr-H0-M22" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="uQ2-ln-s9U"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="MessageLabel" destination="avr-H0-M22" id="Azc-ui-4uE"/>
-                <outlet property="bubbleImageView" destination="2fX-eD-rcw" id="9am-WY-IZs"/>
             </connections>
+            <point key="canvasLocation" x="9" y="74"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="bubbleMessage" width="708" height="512"/>
-    </resources>
 </document>

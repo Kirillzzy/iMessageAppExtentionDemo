@@ -22,6 +22,8 @@ class ExpandedViewController: UIViewController, UITableViewDelegate, UITableView
         if conversation?.selectedMessage != nil {
             MessagesClass.updateInfiormation(urls: (conversation?.selectedMessage?.url)!)
         }
+        messagesTableView.rowHeight = CGFloat(50)
+        questionLabel.layer.cornerRadius = 10
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,21 +33,34 @@ class ExpandedViewController: UIViewController, UITableViewDelegate, UITableView
         questionLabel.text = MessagesClass.question
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let numberOfSections = messagesTableView.numberOfSections
+        let numberOfRows = messagesTableView.numberOfRows(inSection: numberOfSections - 1)
+        if numberOfRows > 0 {
+            let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
+            messagesTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+        }
+    }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
         let text = messageTextField.text
-        if text == ""{
+        if text! == "" || (text?.characters.count)! > 30{
             return
+        }
+        var caption = "New Question!"
+        if MessagesClass.messages.count > 0 {
+            caption = "New Answer!"
         }
         MessagesClass.messages.append(text!)
         let session = conversation?.selectedMessage?.session ?? MSSession()
         let message = MSMessage(session: session)
         let layout = MSMessageTemplateLayout()
-        layout.image = #imageLiteral(resourceName: "calc")
+        layout.image = #imageLiteral(resourceName: "messe")
         layout.imageTitle = "iMessage Extension"
-        layout.caption = "Hello world!"
+        layout.caption = caption
         message.layout = layout
-        message.summaryText = "Sent Hello World message"
         
         message.url = MessagesClass.getUrls()
         conversation?.insert(message)

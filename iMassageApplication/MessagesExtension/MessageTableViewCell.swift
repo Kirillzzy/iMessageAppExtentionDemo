@@ -15,7 +15,6 @@ class MessageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //bubbleImageView.image = #imageLiteral(resourceName: "bubbleMessage")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

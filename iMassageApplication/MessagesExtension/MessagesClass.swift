@@ -11,7 +11,7 @@ import Messages
 
 class MessagesClass {
     static var messages = [String]()
-    static var question: String = ""
+    static var question: String = "Ask a question"
     
     static func updateInfiormation(urls: URL){
         messages.removeAll()
