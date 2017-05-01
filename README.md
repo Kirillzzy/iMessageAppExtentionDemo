@@ -9,9 +9,9 @@ AskMessenger features:
 - Ask a question and your friends will answer on them!
 
 Todo:
-- improve design
-- add some features
-- improve bugs
+- Improve design
+- Add some features
+- Improve bugs
 
 
 ![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/Screens/third.png)
