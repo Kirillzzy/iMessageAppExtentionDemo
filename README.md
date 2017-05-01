@@ -12,9 +12,9 @@ Todo:
 - improve bugs
 
 
-![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/third.png)
+![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/Screens/third.png)
 
-![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/first.png)
+![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/Screens/first.png)
 
-![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/second.png)
+![alt tag](https://github.com/Kirillzzy/iMessageAppExtentionDemo/blob/master/Screens/second.png)
 
